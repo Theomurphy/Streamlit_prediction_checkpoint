@@ -8,7 +8,7 @@ model = joblib.load("model/LR_model.pkl")
 
 def main():
     
-    st.title('Prediction')
+    st.title('Bank account owner prediction')
     
     country = st.selectbox("Select your country", ['Kenya', 'Rwanda', 'Tanzania', 'Uganda'])
     if country == 'Kenya':

@@ -3,15 +3,14 @@ from sklearn.metrics import accuracy_score, classification_report
 
 import joblib
 import streamlit as st 
-import os
+#import os
 
 # Charger le modèle ML
 
-model_path = os.path.join("model", "LR_model.pkl")
+#model_path = os.path.join("model", "LR_model.pkl")
 
-model = joblib.load(model_path)
 # Load the trained model
-
+model = joblib.load("model/LR_model.pkl")
 
 def main():
     

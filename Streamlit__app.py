@@ -110,11 +110,13 @@ def main():
     
     if button:
         predict_new = model.predict(input_data)
+
+        st.write('Based on the information provided')
         
         if predict_new == 1:
-            st.success('The interviewed person has a bank account')
+            st.success('The person has a bank account')
         else:
-            st.error('The interviewed person does not have a bank account')
+            st.error('The person does not have a bank account')
 
 
 main()

@@ -1,15 +1,9 @@
 import pandas as pd 
-from sklearn.metrics import accuracy_score, classification_report 
-
 import joblib
 import streamlit as st 
-#import os
-
-# Charger le modèle ML
-
-#model_path = os.path.join("model", "LR_model.pkl")
 
 # Load the trained model
+
 model = joblib.load("model/LR_model.pkl")
 
 def main():

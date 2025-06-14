@@ -1,21 +1,14 @@
 import pandas as pd 
-from sklearn.metrics import accuracy_score, classification_report 
-
 import joblib
 import streamlit as st 
-import os
 
-# Charger le modèle ML
-
-model_path = os.path.join("model", "LR_model.pkl")
-
-model = joblib.load(model_path)
 # Load the trained model
 
+model = joblib.load("model/LR_model.pkl")
 
 def main():
     
-    st.title('Prediction')
+    st.title('Bank account owner prediction')
     
     country = st.selectbox("Select your country", ['Kenya', 'Rwanda', 'Tanzania', 'Uganda'])
     if country == 'Kenya':
@@ -117,11 +110,13 @@ def main():
     
     if button:
         predict_new = model.predict(input_data)
+
+        st.write('Based on the information provided')
         
         if predict_new == 1:
-            st.success('The interviewed person has a bank account')
+            st.success('The person has a bank account')
         else:
-            st.error('The interviewed person does not have a bank account')
+            st.error('The person does not have a bank account')
 
 
 main()
